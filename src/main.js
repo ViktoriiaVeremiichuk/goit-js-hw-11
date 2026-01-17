@@ -12,7 +12,7 @@ imgInput.addEventListener('focus', () => {
 
 searchForm.addEventListener ("submit", (event)=>{
     event.preventDefault();   
-
+    clearGallery();
     const query = imgInput.value.trim();
    
     if (query === "") {
@@ -24,19 +24,22 @@ searchForm.addEventListener ("submit", (event)=>{
     getImagesByQuery(query)
     .then((data) => {
         if (data.hits.length === 0){
-            clearGallery();
-                iziToast.error({
+            iziToast.error({
                 title: '❌',
                 message: `Sorry, there are no images matching your search query. Please try again!`,
                 position: 'topRight',
                 timeout: '2000',});
-    } else {clearGallery();
-        createGallery(data.hits);}
+    } else {createGallery(data.hits);}
     })
-    .catch (error => console.log(error))
+    .catch (error => {console.log(error);
+            iziToast.error({
+                title: 'Error',
+                message: `Something went wrong with the server request. Please try again later.!`,
+                position: 'topRight',
+                timeout: '2000',});
+            })
     .finally (()=>hideLoader());
 })
-
 
 
 
