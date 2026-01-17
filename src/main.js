@@ -12,13 +12,14 @@ imgInput.addEventListener('focus', () => {
 
 searchForm.addEventListener ("submit", (event)=>{
     event.preventDefault();   
-    clearGallery();
+    
     const query = imgInput.value.trim();
    
     if (query === "") {
         return;
     }
-
+    
+    clearGallery();
     showLoader();
 
     getImagesByQuery(query)
