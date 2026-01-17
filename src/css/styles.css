@@ -7,12 +7,139 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+
+.form {
+  display: flex;
+  align-items: center;     
+  justify-content: center; 
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.search-input {
+  box-sizing: border-box;
+  height: 40px;
+  width: 272px;
+  border-radius: 4px;
+  background: #fff;
+  padding: 8px 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #808080;
+  border-color: #808080;
+  transition: border-color 0.3s;
+}
+
+.search-input:hover {
+  border-color: #000000;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4E75FF;
+}
+
+.submit-btn {
+  box-sizing: border-box;
+  border-radius: 8px;
+  border-color: transparent;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background: #6c8cff;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 100%;
+  margin: 15px auto;
+}
+
+.gallery-item {
+  width: calc((90% - 64px) / 5);
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 150px; 
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+.quantitative-data {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: #222;
+}
+
+.stats-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 12px;
+  color: #555;
+}
+
+.stats-num {
+  margin: 2px 0 0 0;
+  font-weight: 700;
+  font-size: 14px;
+  color: #111;
+} 
+
+.loader.hidden { display: none; }
+
+.loader {
+  display: block;
+  margin: 20px auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-top: 3px solid #000;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
